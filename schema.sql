@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS Shirts;
+
+CREATE DATABASE Shirts;
+
+
