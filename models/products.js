@@ -1,10 +1,11 @@
 
-module.export=function(sequelize, DataTypes) {
+module.exports=function(sequelize, DataTypes) {
   const Products = sequelize.define("Products", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-    },
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   autoIncrement: true,
+    //   primaryKey: true
+    // },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,12 +33,12 @@ module.export=function(sequelize, DataTypes) {
 
   });
 
-  Products.associate = function (models){
-    Products.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: true,
-      },
-    });
-  };
+  // Products.associate = function (models){
+  //   Products.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: true,
+  //     },
+  //   });
+  // };
   return Products;
 }

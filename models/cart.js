@@ -1,9 +1,10 @@
 
-module.export=function(sequelize, DataTypes) {
-  const Cart = sequelize.define("books", {
-    id: {
-      type: DataTypes.INTEGER,
-    },
+module.exports=function(sequelize, DataTypes) {
+  const Cart = sequelize.define("cart", {
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   primaryKey: true
+    // },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,7 +33,7 @@ module.export=function(sequelize, DataTypes) {
   });
 
   Cart.associate = function (models){
-    Cart.belongsTo(models.users, {
+    Cart.belongsTo(models.User, {
       foreignKey: {
         allowNull: true,
       },

@@ -1,4 +1,5 @@
 const express = require("express");
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 // models sync
@@ -11,10 +12,13 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-require("./routes/user")(app);
-require("./routes/products")(app);
-require("./routes/products")(app);
+// Add routes, both API and data
+app.use(routes);
+// require("./routes/api/productsApi.js")(app);
+// require("./routes/users")(app);
+// require("./routes/products")(app);
+
+// require("./routes/cart")(app);
 // Start the API server
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
