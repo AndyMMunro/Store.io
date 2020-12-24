@@ -1,19 +1,45 @@
-const router = require("express").Router();
-const utilsAPI = require("../../utils/API.js");
+var db = require("../../models");
 
-// Matches with "/api/books"
-router.route("/")
-// creates are route to the utils/API folder so data can be accessed. 
-  .get(product.getAllProducts)
-  // router.get('/',product.getAllProducts)
+module.exports = function(app) {
+  app.get("/products", function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.Products.findAll({
+      include: [db.Post]
+    }).then(function(dbProducts) {
+      res.json(dbProducts);
+    });
+  });
 
-  // .post(utilsAPI.create);
+  // app.get("/api/products/:id", function(req, res) {
+  //   // Here we add an "include" property to our options in our findOne query
+  //   // We set the value to an array of the models we want to include in a left outer join
+  //   // In this case, just db.Post
+  //   db.Products.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     },
+  //     include: [db.Post]
+  //   }).then(function(dbProducts) {
+  //     res.json(dbProducts);
+  //   });
+  // });
 
-// // Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(booksController.findById)
-//   .put(booksController.update)
-//   .delete(booksController.remove);
+  // app.post("/api/products", function(req, res) {
+  //   db.Products.create(req.body).then(function(dbProducts) {
+  //     res.json(dbProducts);
+  //   });
+  // });
 
-module.exports = router;
+  // app.delete("/api/products/:id", function(req, res) {
+  //   db.Products.destroy({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbProducts) {
+  //     res.json(dbProducts);
+  //   });
+  // });
+
+};

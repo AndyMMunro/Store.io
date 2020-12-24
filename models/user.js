@@ -12,7 +12,7 @@ module.exports=function(sequelize, DataTypes) {
       allowNull: false,
       len:[64],
     },
-    nameuser: {
+    userName: {
       type: DataTypes.STRING,
       allowNull: false,
       len:[64],
