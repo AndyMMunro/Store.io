@@ -4,21 +4,22 @@ const router = express.Router();
 
 module.exports = function(router) {
 
-  router.get("/products", function(req, res) {
+  router.get("/api/products", function(req, res) {
     db.products.findAll().then(function(dbProducts) {
       res.json(dbProducts);
+      // console.log(dbProducts);
     });
   });
 
-  // router.get("/products/:id", function(req, res) {
-  //   db.Products.findOne({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function(dbProducts) {
-  //     res.json(dbProducts);
-  //   });
-  // });
+  router.get("/api/products/:id", function(req, res) {
+    db.Products.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbProducts) {
+      res.json(dbProducts);
+    });
+  });
 
   // router.post("/products", function(req, res) {
   //   db.Products.create(req.body).then(function(dbProducts) {
