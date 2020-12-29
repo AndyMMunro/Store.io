@@ -2,6 +2,7 @@ import React from 'react';
 import {useState, useEffect} from "react";
 import '../../App.css';
 import Axios from "axios";
+import ProductsCard from "../ProductsCard"
 // import { Link } from "react-router-dom";
 // import API from "../../utils/API.js"
 
@@ -20,7 +21,7 @@ export default function Products() {
     Axios.get("api/products") 
     .then(res =>{
       setProducts(res.data)
-      console.log(res, "testing axios response")
+      // console.log(res, "testing axios response")
     })
       .catch(error => console.log(error));
   };
@@ -30,8 +31,10 @@ export default function Products() {
     
     <div>
       
-      <h1 className='products' res = {products}>PRODUCTS</h1>
-      
+      <h1 className='products' results={products}>PRODUCTS</h1>
+      <ProductsCard 
+            results={products} 
+            />
     </div>
   ) 
 }
