@@ -11,15 +11,15 @@ module.exports = function(router) {
     });
   });
 
-  router.get("/api/products/:id", function(req, res) {
-    db.Products.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbProducts) {
-      res.json(dbProducts);
-    });
-  });
+  // router.get("/api/products/:id", function(req, res) {
+  //   db.Products.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbProducts) {
+  //     res.json(dbProducts);
+  //   });
+  // });
 
   // router.post("/products", function(req, res) {
   //   db.Products.create(req.body).then(function(dbProducts) {

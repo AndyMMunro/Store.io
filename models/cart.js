@@ -15,15 +15,15 @@ module.exports=function(sequelize, DataTypes) {
       allowNull: false,
       len: [10],
     },
-    category:{
-      type:DataTypes.STRING,
-      allowNull: false,
-      len:[64],
-    },
     description:{
       type:DataTypes.STRING,
       allowNull: false,
       len:[1000],
+    },
+    category:{
+      type:DataTypes.STRING,
+      allowNull: false,
+      len:[64],
     },
     image:{
       type:DataTypes.STRING,
