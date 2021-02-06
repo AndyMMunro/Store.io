@@ -15,18 +15,7 @@ function BootstrapCard (props){
         //   console.log(apiroute, "testing card response");
         // })
   return(
-    // {...props.result.volumeInfo.title}
-    // <Card>
-    //   <Card.Header></Card.Header>
-    //   <Card.Img variant="top" src="holder.js/100px160" />
-    //   <Card.Body>
-    //   <Card.Title {...props.results.volumeInfo.title}>Special title treatment</Card.Title>
-    //   <Card.Text>
-    //   With supporting text below as a natural lead-in to additional content.
-    //   </Card.Text>
-    //   <Button variant="primary">Go somewhere</Button>
-    //   </Card.Body>
-    // </Card>
+
     <div>
       <table className="emp-list" >
         <thead>
