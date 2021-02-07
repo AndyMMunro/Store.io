@@ -2,7 +2,6 @@ import React from 'react';
 import {useState, useEffect} from "react";
 import '../../App.css';
 import Axios from "axios";
-import { Container, Row, Col } from "../Grid";
 import {ProductList, ProductListItems} from "../Cards"
 
 export default function Products() {
